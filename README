@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+NOTICE:
+
+1.修改env-yunio里面对应的路径
+
+#2.将"source /yunio-bins路径/env-yunio"放到 "~/.bashrc"中
+2.执行 echo "source /yunio-bins路径/env-yunio" >> ~/.bashrc
+
+3.打开新的terminal窗口即可使用
+
+
