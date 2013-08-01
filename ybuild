@@ -1,0 +1,15 @@
+#!/bin/bash
+#res=`cd $1 | grep bash\:\ cd\:\ $1`
+if [ "$1" == "clean" ]; then
+    rm -rf $ysdk/java/obj $ysdk/java/bin
+fi
+cd $ysdk/java/jni
+./build.sh
+echo "build completed"
+bnotify "build completed"
+#mv $ya/libs/armeabi/libyunio.so $yunio
+mv $ysdk/java/libs/armeabi/libyunio.so $ya/libs/armeabi/libyunio.so
+
+#ll -sh  $yunio/libyunio.so
+ls -l -sh  $ya/libs/armeabi/libyunio.so
+

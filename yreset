@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "CLEAR all data of \"com.yunio\"; Yunio/ .Yunio/ will also be DELETED"
+adb shell pm clear com.yunio
+adb shell rm -R /sdcard/.Yunio
+ystart
+

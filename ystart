@@ -1,0 +1,9 @@
+#!/bin/bash
+source $toolbin/basic-method
+check_device
+fs com.yunio
+if [ $dev ]; then
+    adb -s $dev shell am start -n com.yunio/.ui.AuthorizeActivity
+else
+    adb shell am start -n com.yunio/.ui.AuthorizeActivity
+fi

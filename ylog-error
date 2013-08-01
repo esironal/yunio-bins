@@ -1,0 +1,3 @@
+
+
+logcat | grep -i \/androidruntime

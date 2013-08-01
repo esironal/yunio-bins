@@ -1,0 +1,53 @@
+#!/bin/bash
+echo ""
+echo "****************************************************************"
+echo "****************************************************************"
+echo "USAGE:	gitll	[repo path]	#[branch]"
+echo "If U don't choose a branch.It'll use the current branch in the path"
+echo "e.g:	gitll	~/test-github	#dev"
+echo "****************************************************************"
+echo "****************************************************************"
+echo ""
+function get_branch()
+{
+	
+	echo "THIS IS YOUR BRANCH:\"$branch\" !!!"
+
+}
+
+#echo `get_branch`
+
+if [ "$1" == "" ]; then
+        echo "please choose a git repo to push!!!!!!!!!!!!!!!!"
+	exit
+elif [ -d "$1" ]; then
+	cd $1
+	branch=`git branch|grep \*|awk '{print $2}'`
+	if [ "$branch" == "" ]; then
+		exit
+	fi
+	echo "The branch now is $branch"
+else
+	echo "****************************Does not exists $1****************************";
+	exit
+fi
+
+if [ "$2" ]; then
+	echo `get_branch`
+	echo "U r choosing $2"
+	exist=`git branch|grep $2`
+	if [ "$exist" ]; then
+		echo "Exists $2!!!.Checkout to $2"
+		branch=$2
+		git checkout $branch
+	else
+		echo "NOT exists $2!!!"
+		echo "Using $branch"
+	fi
+fi
+
+echo "The branch is $branch"
+echo "Pulling $branch ..."
+git pull origin $branch
+echo "pull $1 with branch \"$branch\" completed !!!"
+notify-send "pull $1 with branch \"$branch\" completed !!!"

@@ -1,0 +1,35 @@
+#!/bin/bash
+
+
+function load5()
+{
+	for i in `seq 5`
+	do
+		adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/$folder\_$user\_$i;
+	done
+}
+
+
+user="715143022"
+folder="sync"
+#load5
+folder="syncroup"
+#load5
+
+
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/sync_$user\_0
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/sync_$user\_1
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/sync_$user\_2
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/sync_$user\_3
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/sync_$user\_4
+
+
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/syncroup_$user\_0
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/syncroup_$user\_1
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/syncroup_$user\_2
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/syncroup_$user\_3
+adb shell cp /sdcard/yunio_testfile/syncedFolders/../test_file_time* /sdcard/yunio_testfile/syncedFolders/syncroup_$user\_4
+
+#for i in `seq 100`
+
+

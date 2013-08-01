@@ -1,0 +1,25 @@
+#!/bin/bash
+adb devices
+source basic-method
+hasdevice=`adb devices|grep -v devices|grep 'device\|offline'`
+if [ "$hasdevice" == "" ]; then
+	echo "==========================NO DEVICE=========================="
+	exit
+fi
+check_device
+echo "==========================   Device is $dev.U can export dev=xxx to SPECIFY it OR export dev= to CLEAR it =========================="
+adb="adb -s $dev logcat"
+$adb -c;
+if [ "$1" ];then
+	$adb -s $1
+	$adb
+else
+	divider
+	noneshow="wpa_supplicant\|dalvikvm\|ExchangeService\|libEGL\|ThemeManager\|PackageManager\|LightsService\|Yamaha-MC1N2-Audio"
+#	$adb="$adb | grep -iv '$noneshow'"
+	echo "==========================log with tag:\"$noneshow\" will NOT be showd!!!!!!!!!!!!!=========================="
+	$adb | grep -iv $noneshow
+fi
+#noneshow="wpa_supplicant\|dalvikvm\|ExchangeService\|ActivityThread\|libEGL\|ThemeManagerPackageManager"
+#echo "==========================log with tag:\"$noneshow\" will NOT be showd!!!!!!!!!!!!!=========================="
+#$adb 

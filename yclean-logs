@@ -1,0 +1,1 @@
+adb shell rm /sdcard/.Yunio/log/2013.07.25/*

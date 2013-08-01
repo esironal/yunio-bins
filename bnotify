@@ -1,0 +1,12 @@
+#!/bin/bash
+os=`uname`
+notify=""
+if [ "$os" == "Darwin" ]; then
+	echo "you are using MacOSi no notification!!!"
+	exit
+else
+#	echo "you are using Linux"
+	notify="notify-send $1"
+fi
+$notify
+

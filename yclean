@@ -1,0 +1,4 @@
+#!/bin/bash
+adb uninstall com.yunio
+adb shell rm -r /sdcard/.Yunio 
+#/sdcard/Yunio
