@@ -10,4 +10,63 @@ NOTICE:
 
 3.打开新的terminal窗口即可使用
 
+INTRODUCE:
+
+adb-ini:
+  当机器读不出设备的时候，可以多执行此命令；
+
+amemory:  
+  查看当前程序的uss，默认是com.yunio；
+  可通过amemory xxxx来显示xxxx的uss
+  
+ashell：
+  进入android shell
+  
+bnotify:
+  bnotify xxx; 在电脑屏幕的右上角弹出内容为"xxx"的提示信息（mac上面不可用，原因：不知道mac对应的指令名称）
+  
+fs：
+  fs xxx; xxx表示android程序的完整包名，用户停止程序运行；
+
+gitll:
+  gitll xxx;  xxx表示某个repo的路径。之后会在此路径当前的分支上面拉取文件
+  
+gitsh：
+  gitsh xxx "comment";  xxx同上， "comment"表示comment。之后会到xxx路径提交当前的跟新。 
+  
+la：
+  查看所有文件，包括掩藏文件
+
+ll：
+  以列表的形式显示所有文件的详细信息
+  
+logcat:
+  logcat xxx; xxx表示需要查看的log对应的tag，不填标识显示所有
+
+reconnect:
+  reconnect 123; 表示连接ip为10.32.0.123的安卓设备(需要设备支持无线调试)。
+  
+ybuild：
+  ybuild clean; 清除java sdk之前的缓存，从太开始编译。不加clean的话，表示不清楚缓存。编译完了之后会自动将yunio-android旧的so文件备份到~/下，然后将新的so复制到android工程中。
+  
+yclean:
+  清除/sdcard/.Yunio、清楚com.yunio程序数据、卸载com.yunio
+  
+  
+  .....
+
+
+ystart:
+  打开com.yunio
+  
+ystop:
+  停止com.yunio
+  
+ypull:
+  把/sdcard/.Yunio 整个文件夹拉下来
+  
+  
+  
+
+
 
