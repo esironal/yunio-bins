@@ -8,7 +8,7 @@
 	start adbd
 	#get ip of your device,eg:"xx.xx.x.x"
 	#busybox ifconfig | sed -n 'wlan0,$p' | grep -i Mask | awk '{print $2}'
-	ip=$(busybox ifconfig wlan0| grep inet | sed '1!d' | awk '{print $2}' | awk -F: '{print $2}')
+	ip=$(busybox ifconfig wlan0|busybox grep inet |busybox sed '1!d' |busybox awk '{print $2}' |busybox awk -F: '{print $2}')
 	echo
 	echo "----------------------do follows in your desk----------------------"
 	echo
