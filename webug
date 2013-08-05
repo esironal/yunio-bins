@@ -1,4 +1,4 @@
-####binbash
+#!/bin/bash
 if [ "$USER" != "root" ]; then
 	echo "You need to start WEBUG run as root" 
 else
@@ -6,6 +6,9 @@ else
 	#setprop service.adb.tcp.port -1#to stop webug
 	stop adbd
 	start adbd
+	#get ip of your device,eg:"xx.xx.x.x"
 	busybox ifconfig
+	echo "do follows in your desk"
+	echo "adb connect xx.xx.x.x:5555"
 fi
 
