@@ -1,4 +1,3 @@
-#!/bin/bash
 if [ "$USER" != "root" ]; then
 	echo "You need to start WEBUG run as root" 
 else
