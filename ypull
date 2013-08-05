@@ -1,5 +1,5 @@
 
-adb pull /sdcard/.Yunio ~/Yunio/logs-sdk/
+adb pull /sdcard/.Yunio ~/Yunio/from-android
 
 
 
