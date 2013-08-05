@@ -11,7 +11,10 @@
 	ip=$(busybox ifconfig wlan0| grep inet | sed '1!d' | awk '{print $2}' | awk -F: '{print $2}')
 	echo
 	echo "-------------------------------------------------------"
+	echo
 	echo "		do follows in your desk"
 	echo "		adb connect $ip:5555"
+	echo "		adb devices"
+	echo
 	echo "-------------------------------------------------------"
 	echo
