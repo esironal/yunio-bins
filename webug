@@ -7,7 +7,7 @@
 	stop adbd
 	start adbd
 	#get ip of your device,eg:"xx.xx.x.x"
-	busybox ifconfig
+	busybox ifconfig | sed -n 'wlan0,$p' | grep -i Mask | awk '{print $2}'
 	echo "do follows in your desk"
 	echo "adb connect xx.xx.x.x:5555"
 
