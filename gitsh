@@ -1,13 +1,14 @@
 #!/bin/bash
 
-echo ""
-echo "****************************************************************"
-echo "****************************************************************"
+echo 
+echo
+echo "----------------------------------------------"
+echo
 echo "USAGE:	gitsh	[repo path]	[commitment]"
 echo "e.g:	gitsh	~/test-github	\"test\" "
-echo "****************************************************************"
-echo "****************************************************************"
-echo ""
+echo
+echo "----------------------------------------------"
+echo
 
 #get the branch
 #if now is master;exit
@@ -17,21 +18,21 @@ echo ""
 #fi
 
 if [ "$1" == "" ]; then
-	echo "*****************************please choose a git repo to push!!!!!!!!!!!!!!!!*****************************"
+	echo "--------------------please choose a git repo to push!-------------------"
 elif [ "$2" == "" ]; then
-	echo "*****************************please say something as a committment to push!!!!!!!!!!!!!!!!*****************************"
+	echo "------------please say something as a committment to push!--------------"
 #if folder exists
 elif [ -d "$1" ]; then
 	cd $1
 	branch=`git branch|grep \*|awk '{print $2}'`
-	echo "*****************************Your branch is  \"$branch\" !!!*****************************"
+	echo "---------------------Your branch is  \"$branch\" !!!--------------------"
 	branch=`git branch|grep \*|awk '{print $2}'`
 #	echo "pulling $branch ..."
 #	git pull origin $branch
 	git add .
 	git commit -m "$2"
 	git push origin $branch
-	echo "*****************************push to $branch completed*****************************"
+	echo "------------------------push to $branch completed-----------------------"
 else
-	echo "*****************************Does NOT exists \"$1\"*****************************"
+	echo "-------------------------Does NOT exists \"$1\"-------------------------"
 fi

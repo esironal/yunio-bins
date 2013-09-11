@@ -1,5 +1,7 @@
 #!/bin/bash
+
 target="$HOME/Yunio/logs-sdk"
+mkdir -p $target
 adb pull /sdcard/.Yunio/log $target/log
 adb pull  /sdcard/.Yunio/metadata $target/metadata
 

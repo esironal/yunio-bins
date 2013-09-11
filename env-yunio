@@ -1,15 +1,15 @@
 #!/bin/bash
 #
 #
-#将下面变量的值为自己电脑上面对应的绝对路径
-#
+#change below to your system
 #
 export toolbin=$HOME/Yunio/yunio-bins
 export ya=~/projects/yunio-workspace/yunio-android-client
 export ysdk=~/projects/yunio-workspace/yunio-sdk
 #set PATH for NDK
 export NDK_HOME=~/android/ndk
-export PATH=$PATH:$NDK_HOME
 
+#do not modify below
+export PATH=$PATH:$NDK_HOME
 export PATH=$PATH:$toolbin
 #export $PATH=$PATH:$toolbin/ytools
