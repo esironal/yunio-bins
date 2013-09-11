@@ -9,6 +9,12 @@ export ysdk=~/projects/yunio-workspace/yunio-sdk
 #set PATH for NDK
 export NDK_HOME=~/android/ndk
 
+#change color and theme
+export PS1="\[\e]0;\w:\u\a\]\[\e[33;1m\]\w\[\e[36;1m\]\u:\[\e[0m\]"
+#export PS1="\[\e]0;\w\a\]\[\e[33;1m\]\w\e[36;1m:\[\e[0m\]"
+export CLICOLOR=1 #启用颜色
+export LSCOLORS=Excbdxxxfxhxhxhxhxcxcx #设置颜色
+
 #do not modify below
 export PATH=$PATH:$NDK_HOME
 export PATH=$PATH:$toolbin
