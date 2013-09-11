@@ -10,7 +10,7 @@ if [ $1 ]; then
 fi
 has_device
 check_device
-echo "--------------------------------------    progress is $prog , `date +\"%y-%m-%d\"`  --------------------------------------"
+echo "--------------------------------------    $prog , `date +\"%y-%m-%d\"`   ------------------------------"
 while :
 do
   #echo -n "input a number:"
@@ -36,8 +36,9 @@ do
       uss=$(adb -s $dev shell $comm | grep -i $prog | awk '{print $5}' | cut -d 'K' -f 1)
       sum=$(expr $sum + $uss)
       ave=$(echo "scale=2;$sum/$count"|bc)
+      cpu=$(adb -s $dev shell dumpsys cpuinfo | grep $prog | awk '{print $1}')
       time=`date +"%H:%M:%S"`
-      echo "USS: now=$uss(kb)   ave=$ave(kb)    time=$time"
+      echo "USS: cpu=$cpu	cur=$uss(kb)	ave=$ave(kb)	time=$time"
   fi
 done
 #echo "USS of com.yunio : now=$resu, ave=$ave, count=$count"
